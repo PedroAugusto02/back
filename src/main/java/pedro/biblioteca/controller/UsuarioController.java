@@ -47,7 +47,6 @@ public class UsuarioController {
     public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
 
         Usuario usuarioExistente = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario não encontrado" + id));
-
         if (usuario.getName() != null) usuarioExistente.setName(usuario.getName());
         if (usuario.getEmail() != null) usuarioExistente.setEmail(usuario.getEmail());
         if (usuario.getAge() != null) usuarioExistente.setAge(usuario.getAge());
