@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pedro.biblioteca.model.Usuario;
-import pedro.biblioteca.repository.LivroRepository;
 import pedro.biblioteca.repository.UserRepository;
 
 import java.util.List;
@@ -17,12 +16,9 @@ public class UsuarioController {
 
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    private LivroRepository livroRepository;
 
     @PostMapping
     public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario) {
-        usuario.setActive(true);
         Usuario usuarioSalvo = userRepository.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioSalvo);
     }
