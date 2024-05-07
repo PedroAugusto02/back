@@ -30,7 +30,6 @@ public class Livro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @NotBlank(message = "Obrigátorio possuir um título")
     @Length(max = 100, message = "O título deve ter no máximo 100 caracteres")
     private String title;
