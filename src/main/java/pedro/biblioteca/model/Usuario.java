@@ -50,4 +50,10 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Jobs> jobs;
 
+    @OneToMany(mappedBy = "usuario")
+    private List<Carro> carros;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Reserva> reservas;
+
 }
